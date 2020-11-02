@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Kerala Trending - Kids</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script>
+	$(document).ready(function()
+	{
+		var handloom=[];
+		var powerloom=[];
+		h=0;
+		p=0;
+		
+		//alert('Hell jquery here');
+		$.getJSON('data/products.json',function(d)
+		{
+			for(var i=0;i<d.length;i++)
+			{
+				if(d[i].category === "Kids")
+				{
+					if(d[i].type === "Powerloom")
+					{
+						//Powerloom code here
+						powerloom[p]=d[i];
+						console.log("Powerloom:"+d[i].type);
+						p++;
+					}
+					if(d[i].type === "Handloom")
+					{
+						//Handloom code here
+						handloom[h]=d[i];
+						console.log("Handloom:"+d[i].type);
+						h++;
+					}
+					
+				}
+				
+			}
+			console.log("Handloom="+handloom.length);
+			console.log("Powerloom="+powerloom.length);
+			insertToHandloomTab(handloom);
+			insertToPowerloomTab(powerloom);
+			
+		});
+		//insertToHandloomTab starts here
+		function insertToHandloomTab(d)
+		{
+			var modals="";
+			for(i=0;i<d.length;i++)
+			{
+					console.log("Image split:"+d[i].image.split(",")[0]);
+							
+							modals+='<div class="row">'+
+								'<div class="col-md-4 mb-2">'+
+									'<div class="card">'+
+										'<img src="images/'+d[i].image.split(",")[0]+'.jpg" class="card-img-top" height="200px" />'+
+										'<input type="hidden" value="'+d[i].image+'"/>'+
+										'<div class="card-body">'+
+											'<h4 class="card-title">'+
+												d[i].product+
+											'</h4>'+
+											'<p class="card-text">'+d[i].description+'</p>'+
+											'<a class="btn btn-success" href="https://wa.me/919495838739?text='+d[i].product+',product=PH0'+d[i].image.split(",")[0]+'">Order Now</a>'+
+										'</div>'+
+									'</div>'+
+								'</div>';
+								if(++i>=d.length) break;
+								modals+='<div class="col-md-4 mb-2">'+
+									'<div class="card">'+
+										'<img src="images/'+d[i].image.split(",")[0]+'.jpg" class="card-img-top" height="200px"/>'+
+										'<input type="hidden" value="'+d[i].image+'"/>'+
+										'<div class="card-body">'+
+											'<h4 class="card-title">'+
+												d[i].product+
+											'</h4>'+
+											'<p class="card-text">'+d[i].description+'</p>'+
+											'<a class="btn btn-success" href="https://wa.me/919495838739?text='+d[i].product+',product=PH0'+d[i].image.split(",")[0]+'">Order Now</a>'+
+										'</div>'+
+									'</div>'+
+								'</div>';
+								if(++i>=d.length) break;
+								modals+='<div class="col-md-4 mb-2">'+
+									'<div class="card">'+
+										'<img src="images/'+d[i].image.split(",")[0]+'.jpg" class="card-img-top" height="200px"/>'+
+										'<input type="hidden" value="'+d[i].image+'"/>'+
+										'<div class="card-body">'+
+											'<h4 class="card-title">'+
+												d[i].product+
+											'</h4>'+
+											'<p class="card-text">'+d[i].description+'</p>'+
+											'<a class="btn btn-success" href="https://wa.me/919495838739?text='+d[i].product+',product=PH0'+d[i].image.split(",")[0]+'">Order Now</a>'+
+										'</div>'+
+									'</div>'+
+								'</div>'+
+							'</div>';
+							
+				}
+				$('#handloom').append(modals);
+		}
+		//insertToHandloomTab ends here
+		//insertToPowerloomTab starts here
+		function insertToPowerloomTab(d)
+		{
+			var modals="";
+			for(i=0;i<d.length;i++)
+			{
+					console.log("Image split:"+d[i].image.split(",")[0]);
+							
+							modals+='<div class="row">'+
+								'<div class="col-md-4 mb-2">'+
+									'<div class="card">'+
+										'<img src="images/'+d[i].image.split(",")[0]+'.jpg" class="card-img-top" height="200px" />'+
+										'<input type="hidden" value="'+d[i].image+'"/>'+
+										'<div class="card-body">'+
+											'<h4 class="card-title">'+
+												d[i].product+
+											'</h4>'+
+											'<p class="card-text">'+d[i].description+'</p>'+
+											'<a class="btn btn-success" href="https://wa.me/919495838739?text='+d[i].product+',product=PH0'+d[i].image.split(",")[0]+'">Order Now</a>'+
+										'</div>'+
+									'</div>'+
+								'</div>';
+								if(++i>=d.length) break;
+								modals+='<div class="col-md-4 mb-2">'+
+									'<div class="card">'+
+										'<img src="images/'+d[i].image.split(",")[0]+'.jpg" class="card-img-top" height="200px"/>'+
+										'<input type="hidden" value="'+d[i].image+'"/>'+
+										'<div class="card-body">'+
+											'<h4 class="card-title">'+
+												d[i].product+
+											'</h4>'+
+											'<p class="card-text">'+d[i].description+'</p>'+
+											'<a class="btn btn-success" href="https://wa.me/919495838739?text='+d[i].product+',product=PH0'+d[i].image.split(",")[0]+'">Order Now</a>'+
+										'</div>'+
+									'</div>'+
+								'</div>';
+								if(++i>=d.length) break;
+								modals+='<div class="col-md-4 mb-2">'+
+									'<div class="card">'+
+										'<img src="images/'+d[i].image.split(",")[0]+'.jpg" class="card-img-top" height="200px"/>'+
+										'<input type="hidden" value="'+d[i].image+'"/>'+
+										'<div class="card-body">'+
+											'<h4 class="card-title">'+
+												d[i].product+
+											'</h4>'+
+											'<p class="card-text">'+d[i].description+'</p>'+
+											'<a class="btn btn-success" href="https://wa.me/919495838739?text='+d[i].product+',product=PH0'+d[i].image.split(",")[0]+'">Order Now</a>'+
+										'</div>'+
+									'</div>'+
+								'</div>'+
+							'</div>';
+							
+				}
+				$('#powerloom').append(modals);
+		}
+		//insertToPowerloomTab ends here
+		$(document).on("click",".card-img-top",function()
+		{
+		
+			var imgs=$(this).parent().find("input[type=hidden]").val().split(",");
+			var html="";
+			for(i=0;i<imgs.length;i++)
+			{
+			
+				if(i==0)
+				{
+					html='<div class="carousel-item active"><img src="images/'+imgs[i]+'.jpg" height="400px" width="100%"></div>';
+					
+				}
+				else
+				{
+					html+='<div class="carousel-item"><img src="images/'+imgs[i]+'.jpg" height="400px" width="100%"></div>';
+				}
+			}
+			
+			$(".carousel-inner").html("");
+			$(".carousel-inner").append(html);
+			$('#imgModal').modal();
+		});
+		
+	});
+  </script>
+  <style>
+	@font-face
+	{
+		font-family:'OpenSansCondensed';
+		src:url('fonts/OpenSansCondensed-Bold.ttf') format('truetype');
+	}
+	*
+	{
+		font-family:OpenSansCondensed;
+	}
+	.nav-bg-color
+	{
+		background-color:#231F20;
+	}
+	.nav-font-color
+	{
+		color:#AD974F;
+	}
+	.body-bg-color
+	{
+		background-color:#EAEAEA;
+	}
+	.banner-bg-img
+	{
+		//background-image:url('images/banner-img.jpg');
+		background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('images/banner-img.jpg');
+		background-repeat:no-repeat;
+		background-size:cover;
+	}
+	.banner-bg-color
+	{
+		background-color:#AD974F;
+	}
+	.banner-font-color
+	{
+		color:#EAEAEA;
+	}	
+	.category-bg-color
+	{
+		background-color:#BE793E;
+	}
+	.category-font-color
+	{
+		color:#231F20;
+	}
+	.trending-img-bg-color
+	{
+		background-color:#231F20;
+	}
+	.trending-bg-color
+	{
+		background-color:#AD974F;
+	}
+	.trending-font-color
+	{
+		color:#231F20;
+	}
+	.btn-color
+	{
+		background-color:#231F20;
+	}
+	.footer-bg-color
+	{
+		background-color:#231F20;
+	}
+	.footer-font-color
+	{
+		color:#AD974F;
+	}
+	.navbar-toggler-icon {
+	  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(173, 151, 79, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+	}
+	.nav-item-bg
+	{
+		background-color:#AD974F;
+		margin-left:2px;
+	}
+	.nav-item >.active
+	{
+		background-color:#231F20!important;
+		color:#AD974F!important;
+		border-color:#231F20!important;
+	}
+	.tab-font-color
+	{
+		color:#231F20;
+	}
+  </style>
+</head>
+<body class="body-bg-color">
+
+	
+<nav class="navbar navbar-expand-sm nav-bg-color nav-font-color fixed-top justify-content-between shadow">
+  <!-- Brand/logo -->
+  <a class="navbar-brand nav-font-color" href="home.html">Kerala Trending</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <!-- Links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+	  <ul class="navbar-nav">
+		<li class="nav-item">
+		  <a class="nav-link nav-font-color" href="handloom.html">Handloom</a>
+		</li>
+		<li class="nav-item">
+		  <a class="nav-link nav-font-color" href="powerloom.html">Powerloom</a>
+		</li>
+		<li class="nav-item">
+		  <a class="nav-link nav-font-color" href="contact.html">Contact Us</a>
+		</li>
+	  </ul>
+  </div>
+</nav>
+<div style="height:100px"></div>
+	<div class="container">
+		<ul class="nav nav-tabs" style="border-bottom:2px solid grey">
+			
+			<li class="nav-item nav-item-bg">
+				<a class="nav-link tab-font-color pr-3 pl-3 active" data-toggle="tab" href="#powerloom">Powerloom</a>
+			</li>
+			<li class="nav-item nav-item-bg">
+				<a class="nav-link  tab-font-color pr-3 pl-3" data-toggle="tab" href="#handloom">Handloom</a>
+			</li>
+		</ul>
+		<div class="tab-content">
+			<div class="tab-pane container mt-2 active" id="powerloom">  </div>
+			<div class="tab-pane container  mt-2" id="handloom">  </div>
+		</div>
+	</div>
+<div style="height:50px">
+</div>
+<div class="p-1 mt-2 fixed-bottom footer-bg-color footer-font-color">
+	<p class="text-center"><a class="footer-font-color" style="font-weight:bold" href="https://wa.me/919495838739">Please click here for more details</a></p>
+</div>
+
+<div class="modal mt-5" id="imgModal">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-body">
+				<div id="demo" class="carousel slide" data-ride="carousel">
+
+
+				  <!-- The slideshow -->
+				  <div class="carousel-inner">
+					<div class="carousel-item active">
+					  <img src="images/0.jpg" height="400px" width="100%">
+					</div>
+					<div class="carousel-item">
+					  <img src="images/1.jpg" height="400px" width="100%">
+					</div>
+					<div class="carousel-item">
+					  <img src="images/2.jpg" height="400px" width="100%">
+					</div>
+				  </div>
+
+				  <!-- Left and right controls -->
+				  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+					<span class="carousel-control-prev-icon"></span>
+				  </a>
+				  <a class="carousel-control-next" href="#demo" data-slide="next">
+					<span class="carousel-control-next-icon"></span>
+				  </a>
+
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+			</div>
+
+		</div>
+	</div>
+</div>
+</body>
+</html>

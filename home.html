@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Kerala Trending - Home</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script>
+	$(document).ready(function()
+	{
+		$('#ladies').click(function()
+		{
+			window.location.replace('ladies.html');
+		});
+		
+		$('#gents').click(function()
+		{
+			window.location.replace('gents.html');
+		});
+		
+		$('#kids').click(function()
+		{
+			window.location.replace('kids.html');
+		});
+	});
+  </script>
+  <style>
+	@font-face
+	{
+		font-family:'OpenSansCondensed';
+		src:url('fonts/OpenSansCondensed-Bold.ttf') format('truetype');
+	}
+	*
+	{
+		font-family:OpenSansCondensed;
+	}
+	.nav-bg-color
+	{
+		background-color:#231F20;
+	}
+	.nav-font-color
+	{
+		color:#AD974F;
+	}
+	.body-bg-color
+	{
+		background-color:#EAEAEA;
+	}
+	.banner-bg-img
+	{
+		//background-image:url('images/banner-img.jpg');
+		background:url('images/banner01.png');
+		background-repeat:no-repeat;
+		background-size:cover;
+		height:300px;
+		width:100%;
+	}
+	.banner-bg-color
+	{
+		background-color:#AD974F;
+	}
+	.banner-font-color
+	{
+		color:#EAEAEA;
+	}	
+	.category-bg-color
+	{
+		background-color:white;
+	}
+	.category-font-color
+	{
+		color:#231F20;
+	}
+	.trending-img-bg-color
+	{
+		background-color:#231F20;
+	}
+	.trending-bg-color
+	{
+		background-color:#AD974F;
+	}
+	.trending-font-color
+	{
+		color:#231F20;
+	}
+	.btn-color
+	{
+		background-color:#231F20;
+	}
+	.footer-bg-color
+	{
+		background-color:#231F20;
+	}
+	.footer-font-color
+	{
+		color:#AD974F;
+	}
+	.navbar-toggler-icon {
+	  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(173, 151, 79, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+	}
+	.card-img-top:hover
+	{
+		transform:scale(1.1);
+	}
+  </style>
+</head>
+<body class="body-bg-color">
+
+	
+<nav class="navbar navbar-expand-sm nav-bg-color nav-font-color fixed-top justify-content-between shadow">
+  <!-- Brand/logo -->
+  <a class="navbar-brand nav-font-color" href="#">Kerala Trending</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <!-- Links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+	  <ul class="navbar-nav">
+		<li class="nav-item">
+		  <a class="nav-link nav-font-color" href="handloom.html">Handloom</a>
+		</li>
+		<li class="nav-item">
+		  <a class="nav-link nav-font-color" href="powerloom.html">Powerloom</a>
+		</li>
+		<li class="nav-item">
+		  <a class="nav-link nav-font-color" href="contact.html">Contact Us</a>
+		</li>
+	  </ul>
+  </div>
+</nav>
+<div style="height:50px"></div>
+
+	<div>
+			<img class="d-none d-md-block" src="images/banner01.png" height="300px" width="100%"/>
+			<img class="d-md-none d-block" src="images/banner02.jpg" height="300px" width="100%"/>
+	</div>
+<div style="height:40px"></div>	
+<h3 class="text-center category-font-color mb-2">Category</h3>
+<hr width="40%" style="border-width:2px"/>
+<div class="container">
+	<div class="row">
+		<div class="col-md-4 p-1 d-flex justify-content-center mb-4" id="ladies">
+			<div class="card category-bg-color category-font-color rounded-0 w-75  border-white shadow" style="height:300px;overflow:hidden">
+				<img class="card-img-top" src="images/category1.png" height="300px"/>
+				<div class="card-body" style="position:absolute;top:230px">
+					<h4 class="card-title text-center">Ladies</h4>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4 p-1 d-flex justify-content-center mb-4" id="gents">
+			<div class="card category-bg-color category-font-color rounded-0 w-75 border-white shadow" style="height:300px;overflow:hidden">
+				<img class="card-img-top" src="images/gents.jpg"  height="300px"/>
+				<div class="card-body" style="position:absolute;top:230px">
+					<h4 class="card-title text-center">Gents</h4>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4 p-1 d-flex justify-content-center mb-4" id="kids">
+			<div class="card category-bg-color category-font-color rounded-0 w-75 border-white shadow" style="height:300px;overflow:hidden">
+				<img class="card-img-top" src="images/categorykids.jpg"  height="300px"/>
+				<div class="card-body" style="position:absolute;top:230px">
+					<h4 class="card-title text-center">Kids</h4>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div style="height:40px"></div>	
+<h3 class="text-center trending-font-color mb-3">Trending</h3>
+<hr width="40%" style="border-width:2px"/>
+<div class="container mt-2">
+	<div class="row m-3">
+		<div class="col-md-3 mb-2">
+			<div class="card" style="height:350px">
+				<img src="images/1.jpg" class="card-img-top" height="150px"/>
+					<div class="card-body">
+						<h4 class="card-title">
+							Pattupavada
+						</h4>
+						<p class="card-text">Mural hand work .Skirt tissue/cotton, top semisilk/cottonsilk</p>
+						<a class="btn btn-success" href="https://wa.me/919495838739?text=PH0001">Order Now</a>
+					</div>
+			</div>
+		</div>
+		<div class="col-md-3 mb-2" >
+			<div class="card" style="height:350px">
+				<img src="images/2.jpg" class="card-img-top" height="150px"/>
+					<div class="card-body">
+						<h4 class="card-title">
+							Pattupavada
+						</h4>
+						<p class="card-text">Mural hand work.Skirt tissue/cotton, top semisilk/cottonsilk</p>
+						<a class="btn btn-success" href="https://wa.me/919495838739?text=PH0002">Order Now</a>
+					</div>
+			</div>
+		</div>
+		<div class="col-md-3 mb-2">
+			<div class="card" style="height:350px">
+				<img src="images/52.jpg" class="card-img-top" height="150px"/>
+					<div class="card-body">
+						<h4 class="card-title">
+							Set Mundu
+						</h4>
+						<p class="card-text mb-5">Palakka Model Set Mundu</p>
+						<a class="btn btn-success" href="https://wa.me/919495838739?text=PH0052">Order Now</a>
+					</div>
+			</div>
+		</div>
+		<div class="col-md-3 mb-2">
+			<div class="card" style="height:350px">
+				<img src="images/79.jpg" class="card-img-top" height="150px"/>
+					<div class="card-body">
+						<h4 class="card-title">
+							Combo
+						</h4>
+						<p class="card-text mb-4">Pure Khadi Kurta with matching Mund</p>
+						<a class="btn btn-success" href="https://wa.me/919495838739?text=PH0079">Order Now</a>
+					</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+<div style="height:50px">
+</div>
+<div class="p-1 mt-2 fixed-bottom footer-bg-color footer-font-color">
+	<p class="text-center"><a class="footer-font-color" style="font-weight:bold" href="https://wa.me/919495838739">Please click here for more details</a></p>
+</div>
+
+
+</body>
+</html>
